@@ -1,6 +1,4 @@
-const BASE_URL =
-  "http://localhost:3000" ||
-  "https://my-json-server.typicode.com/tad27/next-13-todo";
+const BASE_URL = "http://localhost:3000";
 
 export const getAllTasks = async () => {
   const res = await fetch(`${BASE_URL}/tasks`, { cache: "no-store" });
