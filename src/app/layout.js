@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import "./globals.css";
 
 export const metadata = {
@@ -8,10 +9,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="p-1">
-        <main className="min-h-[750px]">
+      <body className="p-10 flex flex-col h-screen">
+        <main className="flex-grow">
           <div className="max-w-4xl mx-auto">{children}</div>
         </main>
+        <Footer />
       </body>
     </html>
   );
