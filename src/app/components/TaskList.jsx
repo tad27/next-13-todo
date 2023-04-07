@@ -4,8 +4,10 @@ import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 
 async function TaskList() {
   const tasks = await getAllTasks();
-  console.log(tasks);
-  return (
+
+  return tasks.length === 0 ? (
+    <div>There is no todo!</div>
+  ) : (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">
         <thead>
@@ -17,9 +19,9 @@ async function TaskList() {
           </tr>
         </thead>
         <tbody>
-          {tasks.map((task) => (
+          {tasks.map((task, index) => (
             <tr key={task.id}>
-              <td>{task.id}</td>
+              <td>{index + 1}</td>
               <td className="w-full">{task.title}</td>
               <td className="">
                 <button className="btn btn-outline btn-success btn-xs rounded-sm">

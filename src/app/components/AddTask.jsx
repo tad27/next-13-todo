@@ -1,21 +1,33 @@
 "use client";
-import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import React, { useRef, useState } from "react";
 import { AiOutlinePlus } from "react-icons/ai";
+import { v4 as uuidv4 } from "uuid";
+
+import { addTask } from "@/data/api";
 import Modal from "./Modal";
 
 function AddTask() {
   const [modalOpen, setModalOpen] = useState(false);
   const [task, setTask] = useState("");
+  const router = useRouter();
+  const inputRef = useRef();
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
+    if (!task.trim()) return;
+    await addTask({
+      id: uuidv4(),
+      title: task,
+    });
     setTask("");
     setModalOpen(false);
+    router.refresh();
   }
 
   return (
-    <div className="my-4">
+    <div className="my-4 flex flex-row-reverse">
       <button onClick={() => setModalOpen(true)} className="btn btn-primary ">
         Add New Task
         <AiOutlinePlus size={18} className="ml-2" />
@@ -26,9 +38,10 @@ function AddTask() {
           <input
             type="text"
             placeholder="write something..."
-            className="w-full px-2 py-2 rounded"
+            className="w-full px-2 py-2 rounded input input-bordered"
             value={task}
             onChange={(e) => setTask(e.target.value)}
+            ref={inputRef}
           />
         </form>
       </Modal>

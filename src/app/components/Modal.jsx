@@ -1,7 +1,6 @@
 import React from "react";
 
 function Modal({ modalOpen, setModalOpen, children }) {
-  console.log(children);
   return (
     <div className={`modal ${modalOpen && "modal-open"}`}>
       <div className="modal-bo relative w-full max-w-xl">
