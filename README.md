@@ -10,9 +10,11 @@ npx create-next-app@latest --experimental-app
 # src: YES
 ```
 <br />
-##### JSON Server
+
+##### Other Dependencies
 ```bash
-npm install json-server
+npm install daisyui
+npm install react-icons
 ```
 ## Getting Started
 
