@@ -1,12 +1,10 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import AddTask from "./components/AddTask";
 
 export default function Home() {
   return (
-    <div>
-      <h1>There is no any todo yet.</h1>
-    </div>
+    <section>
+      <h1 className="text-2xl">My To Do</h1>
+      <AddTask />
+    </section>
   );
 }

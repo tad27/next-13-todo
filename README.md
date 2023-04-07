@@ -9,6 +9,7 @@ npx create-next-app@latest --experimental-app
 # TypeScript? NO
 # src: YES
 ```
+
 <br />
 
 ##### Other Dependencies
