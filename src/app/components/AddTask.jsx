@@ -9,7 +9,6 @@ function AddTask() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(task);
 
     setTask("");
     setModalOpen(false);
