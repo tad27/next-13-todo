@@ -17,3 +17,21 @@ export const addTask = async (task) => {
   const newTask = await response.json();
   return newTask;
 };
+
+export const editTask = async (task) => {
+  const response = await fetch(`${BASE_URL}/tasks/${task.id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(task),
+  });
+  const updatedTask = await response.json();
+  return updatedTask;
+};
+
+export const deleteTask = async (id) => {
+  await fetch(`${BASE_URL}/tasks/${id}`, {
+    method: "DELETE",
+  });
+};

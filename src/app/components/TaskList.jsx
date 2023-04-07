@@ -1,6 +1,8 @@
 import React from "react";
 import { getAllTasks } from "@/data/api";
 import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import EditTask from "./EditTask";
+import DeleteTask from "./DeleteTask";
 
 async function TaskList() {
   const tasks = await getAllTasks();
@@ -24,14 +26,10 @@ async function TaskList() {
               <td>{index + 1}</td>
               <td className="w-full">{task.title}</td>
               <td className="">
-                <button className="btn btn-outline btn-success btn-xs rounded-sm">
-                  <AiFillEdit size={18} />
-                </button>
+                <EditTask task={task} />
               </td>
               <td className="">
-                <button className="btn btn-outline btn-error btn-xs rounded-sm">
-                  <AiFillDelete size={18} />
-                </button>
+                <DeleteTask id={task.id} />
               </td>
             </tr>
           ))}

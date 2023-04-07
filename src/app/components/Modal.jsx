@@ -2,8 +2,8 @@ import React from "react";
 
 function Modal({ modalOpen, setModalOpen, children }) {
   return (
-    <div className={`modal ${modalOpen && "modal-open"}`}>
-      <div className="modal-bo relative w-full max-w-xl">
+    <div className={`modal ${modalOpen && "modal-open"} bg-black/75`}>
+      <div className="modal-bo relative w-full max-w-xl bg-black border-2 border-gray-900 rounded px-6 py-10">
         <label
           htmlFor="modal"
           onClick={() => setModalOpen(false)}
