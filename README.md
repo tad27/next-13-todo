@@ -9,7 +9,15 @@ npx create-next-app@latest --experimental-app
 # TypeScript? NO
 # src: YES
 ```
+<br />
 
+##### JSON Server
+You can find it here: https://github.com/typicode/json-server
+```bash
+npm install json-server
+npm install uuid
+
+```
 <br />
 
 ##### Other Dependencies
